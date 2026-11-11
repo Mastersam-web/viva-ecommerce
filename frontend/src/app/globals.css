@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Styles personnalisés repris à l'identique du frontend d'origine ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f382c;
+  border-radius: 4px;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.nav-link.active {
+  color: #0f382c;
+  border-bottom-color: #0f382c;
+  font-weight: 700;
+}
+
+/* Contenu éditable (CMS) : mise en forme des pages légales / blog */
+.prose-viva h2 { font-size: 1.125rem; font-weight: 800; color: #0f382c; margin: 1.5rem 0 0.5rem; }
+.prose-viva h3 { font-size: 1rem; font-weight: 700; color: #0f382c; margin: 1rem 0 0.4rem; }
+.prose-viva p, .prose-viva li { font-size: 0.875rem; line-height: 1.7; color: #4b5563; font-weight: 500; }
+.prose-viva p { margin: 0.5rem 0; }
+.prose-viva ul { list-style: disc; padding-left: 1.25rem; }
+.prose-viva a { color: #0f382c; text-decoration: underline; }

@@ -1,0 +1,16 @@
+# Base MySQL de développement (optionnel). Utilisation : docker compose up -d
+# Puis dans backend/.env : DB_HOST=127.0.0.1 DB_USER=viva DB_PASSWORD=viva_dev_password DB_NAME=viva_live_better
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_dev_password
+      MYSQL_DATABASE: viva_live_better
+      MYSQL_USER: viva
+      MYSQL_PASSWORD: viva_dev_password
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports: ["3306:3306"]
+    volumes: ["viva_db:/var/lib/mysql"]
+volumes:
+  viva_db:
